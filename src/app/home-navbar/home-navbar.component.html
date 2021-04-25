@@ -5,7 +5,7 @@
           fix&fork
         </a>
         <button class=" cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" (click)="toggleNavbar()">
-          <i class="fas fa-bars"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(4,41,89,1)"/></svg>
         </button>
       </div>
       <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="navbar-links lg:flex lg:flex-grow items-center">
