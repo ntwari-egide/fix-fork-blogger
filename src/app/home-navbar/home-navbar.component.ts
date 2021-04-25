@@ -9,6 +9,11 @@ export class HomeNavbarComponent implements OnInit {
 
   constructor() { }
 
+  showMenu = false;
+  toggleNavbar(){
+    this.showMenu = !this.showMenu;
+  }
+
   ngOnInit(): void {
   }
 
