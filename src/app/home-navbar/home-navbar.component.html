@@ -1,28 +1,37 @@
 <nav class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-pink-500 mb-3">
     <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
       <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
-        <a class="logo-design text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap" href="#pablo">
+        <a class="logo-design text-sm font-bold leading-relaxed inline-block mr-4 whitespace-nowrap" href="#pablo">
           fix&fork
         </a>
-        <button class="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" (click)="toggleNavbar()">
+        <button class=" cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" (click)="toggleNavbar()">
           <i class="fas fa-bars"></i>
         </button>
       </div>
-      <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center">
+      <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="navbar-links lg:flex lg:flex-grow items-center">
         <ul class="flex flex-col lg:flex-row list-none ml-auto">
           <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-              <i class="fab fa-facebook-square text-lg leading-lg text-white opacity-75"></i><span class="ml-2">Share</span>
+            <a class="px-3 py-2 flex items-center text-xs font-bold leading-snug  hover:opacity-75" href="#pablo">
+              <span class="ml-2">About</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-              <i class="fab fa-twitter text-lg leading-lg text-white opacity-75"></i><span class="ml-2">Tweet</span>
+            <a class="px-3 py-2 flex items-center text-xs font-bold leading-snug  hover:opacity-75" href="#pablo">
+                <span class="ml-2">Tutorials</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
-              <i class="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i><span class="ml-2">Pin</span>
+            <a class="px-3 py-2 flex items-center text-xs font-bold leading-snug  hover:opacity-75" href="#pablo">
+                <span class="ml-2">Questions</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="px-3 py-2 flex items-center text-xs font-bold leading-snug  hover:opacity-75" href="#pablo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C21.662 17.854 17.316 22 12.001 22 6.477 22 2 17.523 2 12c0-5.315 4.146-9.661 9.38-9.981z"/></svg>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="px-3 py-2 flex items-center text-xs font-bold leading-snug  hover:opacity-75" href="#pablo">
+              <i class="fab fa-pinterest text-lg leading-lg  opacity-75"></i><span class="ml-2">subscribe</span>
             </a>
           </li>
         </ul>
