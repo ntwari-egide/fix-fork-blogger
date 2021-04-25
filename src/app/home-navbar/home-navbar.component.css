@@ -5,6 +5,9 @@
     color: #042959;
 }
 
-.navbar-links ul li a{
-    
+.navbar-links ul li a span{
+    font-size: 17px;
+    font-weight: 500;
+    font-family: Manrope;
+    color: #042959;
 }
