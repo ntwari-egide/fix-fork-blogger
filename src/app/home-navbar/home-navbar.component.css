@@ -13,5 +13,13 @@
 }
 
 .subscribe-button{
-    
+    background-color: #08428C;
+    margin-left: 39px;
+    border-radius: 6px;
+    padding: 9px 24px;
+}
+
+.subscribe-button span{
+    color: white !important;
+    font-size: 14px !important;
 }
