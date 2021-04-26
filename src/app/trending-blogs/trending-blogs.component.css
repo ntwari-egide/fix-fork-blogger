@@ -2,6 +2,7 @@
 .blog-content img{
     width: 489px !important;
     height: 249px !important;
+    border-radius: 4px;
 }
 
 .blog-content h1{
@@ -14,5 +15,10 @@
 }
 
 .blog-content p{
-    
+    font-weight: 500;
+    font-family: 'Manrope';
+    margin-top: 17px;
+    font-size: 13px;
+    text-align: justify;
+    color: #25282b;
 }
