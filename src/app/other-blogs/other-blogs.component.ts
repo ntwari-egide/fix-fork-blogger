@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OtherBlogsComponent implements OnInit {
 
+  otherBlogsList = [1,2,3,4,5,6,7,8,9]
+
   constructor() { }
 
   ngOnInit(): void {
