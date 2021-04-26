@@ -1,7 +1,16 @@
 <div class="md:m-4">
-    <carousel>
+    <!-- <carousel>
         <div *ngFor="let blog of listOfTrendingBlogs" class="carousel-cell">
            <h1>This is my content</h1>
         </div>
-    </carousel>
+    </carousel> -->
+    <swiper
+      [slidesPerView]="3"
+      [spaceBetween]="50"
+      effect = "fade"
+    >
+      <ng-template swiperSlide **ngFor="let blog of listOfTrendingBlogs">Slide 1</ng-template>
+      <ng-template swiperSlide>Slide 2</ng-template>
+      <ng-template swiperSlide>Slide 3</ng-template>
+    </swiper>
 </div>
