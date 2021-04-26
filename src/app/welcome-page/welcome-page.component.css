@@ -21,6 +21,10 @@
     background-color: #0a5540;
 }
 
-.welcome-image{
-
+.welcome-blog-heads{
+    margin-left: 85px;
+    font-size: 22px;
+    font-family: 'Manrope';
+    font-weight: 700;
+    color: #042959;
 }
