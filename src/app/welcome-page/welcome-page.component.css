@@ -9,11 +9,16 @@
 }
 
 .welcome-read-button{
-    background: #2E7F33;
+    background: #038C65;
     color: white;
     padding: 10px 50px;
     border-radius: 3px;
     font-family: 'Manrope';
+}
+.welcome-read-button:hover{
+    transform: scale(1.04);
+    transition: ease-in-out 0.3s;
+    background-color: #0a5540;
 }
 
 .welcome-image{
