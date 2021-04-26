@@ -8,6 +8,7 @@ import { TrendingBlogsComponent } from './trending-blogs/trending-blogs.componen
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { SwiperModule } from 'swiper/angular';
 import { OtherBlogsComponent } from './other-blogs/other-blogs.component';
+import { FooterPageComponent } from './footer-page/footer-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { OtherBlogsComponent } from './other-blogs/other-blogs.component';
     HomeNavbarComponent,
     WelcomePageComponent,
     TrendingBlogsComponent,
-    OtherBlogsComponent
+    OtherBlogsComponent,
+    FooterPageComponent
   ],
   imports: [
     BrowserModule,
