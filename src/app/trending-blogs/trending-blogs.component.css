@@ -23,6 +23,10 @@
     color: #25282b;
 }
 
+.blog-content span{
+    font-size: 12px;
+}
+
 .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
     background: white !important;
     color: #0a81ffb8 !important;
