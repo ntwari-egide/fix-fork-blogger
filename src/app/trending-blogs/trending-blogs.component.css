@@ -23,7 +23,7 @@
     color: #25282b;
 }
 
-.blog-content span{
+.blog-content span, .blog-content .time-occurance{
     font-size: 12px;
 }
 
