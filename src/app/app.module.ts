@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { TrendingBlogsComponent } from './trending-blogs/trending-blogs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeNavbarComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    TrendingBlogsComponent
   ],
   imports: [
     BrowserModule
