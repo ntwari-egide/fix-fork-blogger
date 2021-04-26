@@ -7,5 +7,17 @@
 }
 
 .welcome-desc-header{
-    
+    font-size: 182%;
+    font-weight: lighter;
+    color: #042959;
+    margin-top: 4%;
+}
+
+.welcome-read-button{
+    background: #2E7F33;
+    color: white;
+    padding: 10px 50px;
+    margin-top: 31px;
+    border-radius: 3px;
+    font-family: 'Manrope';
 }
