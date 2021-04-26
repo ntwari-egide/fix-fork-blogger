@@ -6,6 +6,7 @@ import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { TrendingBlogsComponent } from './trending-blogs/trending-blogs.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
   ],
   imports: [
     BrowserModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
