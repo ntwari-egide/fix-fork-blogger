@@ -7,13 +7,15 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { TrendingBlogsComponent } from './trending-blogs/trending-blogs.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { SwiperModule } from 'swiper/angular';
+import { OtherBlogsComponent } from './other-blogs/other-blogs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeNavbarComponent,
     WelcomePageComponent,
-    TrendingBlogsComponent
+    TrendingBlogsComponent,
+    OtherBlogsComponent
   ],
   imports: [
     BrowserModule,
