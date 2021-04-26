@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { TrendingBlogsComponent } from './trending-blogs/trending-blogs.component';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TrendingBlogsComponent } from './trending-blogs/trending-blogs.componen
     TrendingBlogsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    IvyCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
