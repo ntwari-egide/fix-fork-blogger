@@ -1,16 +1,19 @@
 <div class="md:m-4">
-    <!-- <carousel>
-        <div *ngFor="let blog of listOfTrendingBlogs" class="carousel-cell">
-           <h1>This is my content</h1>
-        </div>
-    </carousel> -->
     <swiper
       [slidesPerView]="3"
       [spaceBetween]="50"
       effect = "fade"
     >
-      <ng-template swiperSlide **ngFor="let blog of listOfTrendingBlogs">Slide 1</ng-template>
-      <ng-template swiperSlide>Slide 2</ng-template>
-      <ng-template swiperSlide>Slide 3</ng-template>
+      <ng-template swiperSlide *ngFor="let blog of listOfTrendingBlogs">
+          <div class="w-5/6 blog-content">
+            <img src="https://cdn.pixabay.com/photo/2016/03/26/13/09/cup-of-coffee-1280537_960_720.jpg"/>
+            <h1>Tips to master while studying typing master 
+                and their importances</h1>
+            <p>Double your typing speed. Learn touch-typing in a fun way. Test your speed and accuracy. Play top-notch typing games</p>
+          </div>
+      </ng-template>
+      <ng-template swiperButtonNext></ng-template>
+      <ng-template swiperButtonPrev></ng-template>
+      
     </swiper>
 </div>

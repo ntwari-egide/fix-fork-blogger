@@ -1,0 +1,18 @@
+
+.blog-content img{
+    width: 489px !important;
+    height: 249px !important;
+}
+
+.blog-content h1{
+    font-family: 'Manrope';
+    color: #003D79;
+    font-weight: 700;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+.blog-content p{
+    
+}
