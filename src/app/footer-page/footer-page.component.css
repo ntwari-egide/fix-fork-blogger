@@ -1,3 +1,9 @@
 .footer-container{
-    
+    background-color: #ececec8f;
+}
+
+.footer-container h1{
+    font-family: 'Quicksand';
+    font-weight: 700;
+    color: #042959;
 }
