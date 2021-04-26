@@ -19,6 +19,12 @@
     padding: 9px 24px;
 }
 
+.subscribe-button:hover{
+    background-color: #1170ec;
+    transform: scale(1.01);
+    transition: ease-in-out 0.3s;
+}
+
 .subscribe-button span{
     color: white !important;
     font-size: 14px !important;
