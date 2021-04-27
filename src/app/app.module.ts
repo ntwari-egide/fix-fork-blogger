@@ -9,6 +9,11 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { SwiperModule } from 'swiper/angular';
 import { OtherBlogsComponent } from './other-blogs/other-blogs.component';
 import { FooterPageComponent } from './footer-page/footer-page.component';
+import { Routes, RouterModule } from '@angular/router'; // CLI imports router
+
+const routes : Routes = [
+
+ ]
 
 @NgModule({
   declarations: [
