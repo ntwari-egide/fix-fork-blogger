@@ -2,12 +2,18 @@
 
 @media only screen and (min-width: 768px){
     .blog-details-container{
+        width: 220%;
         margin-left: -301px;
     }
     .blog-details-container-left{
         margin-left: 257px;
         position: sticky;
         top: 20px;
+    }
+
+    .blog-details-container img{
+        width: 980px;
+        height: 399px;
     }
 }
 
@@ -48,4 +54,7 @@
 .blog-details-container{
     font-family: 'Manrope';
     padding: 10px;
+}
+.blog-details-container .blog-title{
+
 }
