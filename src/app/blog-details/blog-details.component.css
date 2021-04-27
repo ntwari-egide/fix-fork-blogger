@@ -13,7 +13,7 @@
 
     .blog-details-container img{
         width: 980px;
-        height: 399px;
+        height: 377px;
     }
 }
 
@@ -56,5 +56,8 @@
     padding: 10px;
 }
 .blog-details-container .blog-title{
-
+    margin-left: 16%;
+    color: #003D79;
+    font-weight: 700;
+    line-height: 50px
 }
