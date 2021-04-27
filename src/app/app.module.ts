@@ -11,12 +11,12 @@ import { OtherBlogsComponent } from './other-blogs/other-blogs.component';
 import { FooterPageComponent } from './footer-page/footer-page.component';
 import { Routes, RouterModule } from '@angular/router';
 import { BlogDetailsComponent } from './blog-details/blog-details.component'; // CLI imports router
-// import { WelcomePageComponentTemplate } from './'
+
 
 const routes : Routes = [
-    // {path: '/',component: WelcomePageComponent},
-    // {path: '/read-blog',component : HomeNavbarComponent},
-    // { path: '**', component: AppComponent }
+    {path: '',component: WelcomePageComponent},
+    {path: 'read-blog',component : BlogDetailsComponent},
+    { path: '**', component: AppComponent }
  ]
 
 @NgModule({
