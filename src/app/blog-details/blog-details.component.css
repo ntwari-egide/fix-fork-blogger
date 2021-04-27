@@ -18,18 +18,22 @@
     height: 51px;
     width: 51px;
     border-radius: 6px;
+    cursor: pointer;
 }
 
 .left-actions p{
     border: 1px solid #17161615;
     background: white;
-    height: 41px;
-    width: 41px;
+    height: 35px;
+    width: 35px;
     text-align: center;
     border-radius: 31px;
     padding: 6px;
     position: relative;
     left: -22px;
-    top: -22px;
+    top: -19px;
     box-shadow: 0 2px 4px #0000000a;
+    font-weight: 500;
+    font-family: 'Manrope';
+    font-size: 14px;
 }
