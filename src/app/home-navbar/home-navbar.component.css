@@ -4,7 +4,12 @@
     font-size: 19px;
     color: #042959;
 }
-
+@media only screen and (min-width: 768px){
+    .logo-design{
+        margin-left: -37px;
+        font-size: 25px;
+    }
+}
 .navbar-header{
     position: sticky !important;
     top: 0px !important;
@@ -23,7 +28,7 @@
     background-color: #08428C;
     margin-left: 39px;
     border-radius: 6px;
-    padding: 9px 24px;
+    padding: 14px 38px;
 }
 
 .subscribe-button:hover{
