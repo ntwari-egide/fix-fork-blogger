@@ -12,14 +12,24 @@
     }
 }
 
-.left-actions{
-
-}
-
 .left-actions img{
-
+    border: 1px solid #3a3e3e3b;
+    padding: 13px;
+    height: 51px;
+    width: 51px;
+    border-radius: 6px;
 }
 
 .left-actions p{
-    
+    border: 1px solid #17161615;
+    background: white;
+    height: 41px;
+    width: 41px;
+    text-align: center;
+    border-radius: 31px;
+    padding: 6px;
+    position: relative;
+    left: -22px;
+    top: -22px;
+    box-shadow: 0 2px 4px #0000000a;
 }
