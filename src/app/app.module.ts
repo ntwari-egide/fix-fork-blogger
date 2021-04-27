@@ -27,7 +27,11 @@ const routes : Routes = [
   imports: [
     BrowserModule,
     IvyCarouselModule,
-    SwiperModule
+    SwiperModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
