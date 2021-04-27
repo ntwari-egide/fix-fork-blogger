@@ -2,10 +2,12 @@
 
 @media only screen and (min-width: 768px){
     .blog-details-container{
-        width: 211%;
+        width: 221%;
         margin-left: -301px;
     }
     .blog-details-container-left{
-        margin-left: 213px;
+        margin-left: 257px;
+        position: sticky;
+        top: 20px;
     }
 }
