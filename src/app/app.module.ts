@@ -14,7 +14,7 @@ import { BlogDetailsComponent } from './blog-details/blog-details.component'; //
 
 
 const routes : Routes = [
-    {path: '',component: WelcomePageComponent},
+    {path: '',component: WelcomePageComponent,pathMatch : 'full'},
     {path: 'read-blog',component : BlogDetailsComponent},
     { path: '**', component: AppComponent }
  ]
