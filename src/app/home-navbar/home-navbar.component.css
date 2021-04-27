@@ -5,6 +5,13 @@
     color: #042959;
 }
 
+.navbar-header{
+    position: sticky !important;
+    top: 0px !important;
+    z-index: 14;
+    background: #fffffffa;
+}
+
 .navbar-links ul li a span{
     font-size: 17px;
     font-weight: 500;
