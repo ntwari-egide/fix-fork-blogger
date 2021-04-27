@@ -12,7 +12,7 @@ import { FooterPageComponent } from './footer-page/footer-page.component';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
 
 const routes : Routes = [
-
+    {path: '/read-blog',component : HomeNavbarComponent}
  ]
 
 @NgModule({
