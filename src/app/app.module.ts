@@ -13,9 +13,9 @@ import { Routes, RouterModule } from '@angular/router'; // CLI imports router
 // import { WelcomePageComponentTemplate } from './'
 
 const routes : Routes = [
-    // {path: '/',component: WelcomePageComponent},
-    // {path: '/read-blog',component : HomeNavbarComponent},
-    // { path: '**', component: AppComponent }
+    {path: '/',component: WelcomePageComponent},
+    {path: '/read-blog',component : HomeNavbarComponent},
+    { path: '**', component: AppComponent }
  ]
 
 @NgModule({
