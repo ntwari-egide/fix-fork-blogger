@@ -2,7 +2,6 @@
 
 @media only screen and (min-width: 768px){
     .blog-details-container{
-        width: 221%;
         margin-left: -301px;
     }
     .blog-details-container-left{
@@ -44,4 +43,9 @@
     width: 51px;
     border-radius: 6px;
     cursor: pointer
+}
+
+.blog-details-container{
+    font-family: 'Manrope';
+    padding: 10px;
 }
