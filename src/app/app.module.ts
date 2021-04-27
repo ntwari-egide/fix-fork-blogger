@@ -10,9 +10,11 @@ import { SwiperModule } from 'swiper/angular';
 import { OtherBlogsComponent } from './other-blogs/other-blogs.component';
 import { FooterPageComponent } from './footer-page/footer-page.component';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
+// import { WelcomePageComponentTemplate } from './'
 
 const routes : Routes = [
-    
+    // {path: '/',component: AppComponent},
+    // {path: '/read-blog',component : HomeNavbarComponent}
  ]
 
 @NgModule({
