@@ -81,3 +81,10 @@
     border-radius: 100%;
     font-size: 13px;
 }
+
+.blog-details-container .comment-actions p{
+    font-size: 13px;
+    color: #3A3E3E;
+    font-weight: 700;
+    padding-top: 3px;
+}
