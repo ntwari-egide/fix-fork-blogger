@@ -11,7 +11,7 @@ import { OtherBlogsComponent } from './other-blogs/other-blogs.component';
 import { FooterPageComponent } from './footer-page/footer-page.component';
 import { Routes, RouterModule } from '@angular/router';
 import { BlogDetailsComponent } from './blog-details/blog-details.component'; // CLI imports router
-
+import {AppRoutingModule} from './app-routing.module';
 
 const routes : Routes = [
     {path: 'read-blog',component : BlogDetailsComponent},
@@ -33,6 +33,7 @@ const routes : Routes = [
     BrowserModule,
     IvyCarouselModule,
     SwiperModule,
+    AppRoutingModule,
     RouterModule.forRoot(routes)
   ],
   exports: [
