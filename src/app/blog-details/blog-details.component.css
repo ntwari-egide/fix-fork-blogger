@@ -67,5 +67,6 @@
     font-weight: 400
 }
 .blog-details-container .comment-section{
-    
+    border-top: 1px solid #73A7CC;
+    margin-top: 200px;
 }
