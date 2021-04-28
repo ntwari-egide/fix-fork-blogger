@@ -8,14 +8,33 @@ import { Component, OnInit } from '@angular/core';
 export class OtherBlogsComponent implements OnInit {
 
   listOfAllBlogs = [{
-    coverPic : 'https://cdn.pixabay.com/photo/2018/07/15/10/44/dna-3539309__340.jpg',
-    title: 'Advanced and Applied AI on Microsoft Azure',
-    description: 'Enhance your understanding of machine learning and AI using Microsoft Azure and Python.',
+    coverPic : 'https://cdn.pixabay.com/photo/2016/04/04/14/12/monitor-1307227__340.jpg',
+    title: 'Collaborative Coding with Git',
+    description: 'Find out how to improve code quality and work collaboratively on large-scale projects using Git.',
     content: '',
-    likes: 11,
-    forks: 9,
-    comments: 3
-},{
+    likes: 5,
+    forks: 0,
+    comments: 2
+},
+{
+  coverPic : 'https://images.pexels.com/photos/52608/pexels-photo-52608.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+  title: 'Digital Skills: Embracing Digital Technology',
+  description: 'Improve your digital skills for study and learn how to navigate the web effectively and safely.',
+  content: '',
+  likes: 422,
+  forks: 1,
+  comments: 3
+},
+{
+  coverPic : 'https://images.pexels.com/photos/4974914/pexels-photo-4974914.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+  title: 'Start a CoderDojo Club',
+  description: 'Get support and advice on how to grow your confidence in coding and start a CoderDojo for young people in your area.',
+  content: '',
+  likes: 42,
+  forks: 1,
+  comments: 23
+},
+{
   coverPic : 'https://cdn.pixabay.com/photo/2016/02/19/11/23/women-1209678__340.jpg',
   title: 'Get practical, hands on experience in cybersecurity',
   description: 'Build essential cyber security skills and learn about security threats and how to manage them.',
@@ -34,7 +53,7 @@ export class OtherBlogsComponent implements OnInit {
   comments: 12 
 },
 {
-  coverPic : 'https://cdn.pixabay.com/photo/2015/10/29/08/17/building-1011876__340.jpg',
+  coverPic : 'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
   title: 'AI Design and Engineering with Microsoft Azure',
   description: 'Develop AI Engineering skills using Microsoft Azure, on the path to role-based certifications.',
   content: '',

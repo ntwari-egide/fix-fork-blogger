@@ -34,7 +34,7 @@ export class TrendingBlogsComponent implements OnInit {
     comments: 12 
   },
   {
-    coverPic : 'https://cdn.pixabay.com/photo/2015/10/29/08/17/building-1011876__340.jpg',
+    coverPic : 'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
     title: 'AI Design and Engineering with Microsoft Azure',
     description: 'Develop AI Engineering skills using Microsoft Azure, on the path to role-based certifications.',
     content: '',
