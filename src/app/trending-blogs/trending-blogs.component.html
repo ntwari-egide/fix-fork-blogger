@@ -5,10 +5,10 @@
       effect = "fade"
     >
       <ng-template swiperSlide *ngFor="let blog of listOfTrendingBlogs">
+          
           <div class="w-5/6 blog-content mt-8 mb-8">
-            <img class="blog-display" src="../../assets/blog-image.jpg"/>
-            <h1>Tips to master while studying typing master 
-                and their importances</h1>
+            <img class="blog-display" src={{blog.coverPic}}/>
+            <h1>{{blog.title}}</h1>
             <p>Double your typing speed. Learn touch-typing in a fun way. Test your speed and accuracy. Play top-notch typing games</p>
             <div class="grid grid-cols-5 mt-8">
                 <div class="grid grid-cols-2 w-4/7">
