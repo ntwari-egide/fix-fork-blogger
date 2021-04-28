@@ -73,10 +73,11 @@
 
 .blog-details-container .profile-pic{
     background: #F29F05;
-    height: 45px;
-    width: 45px;
+    height: 40px;
+    width: 40px;
     text-align: center;
     padding: 10px;
     color: white;
     border-radius: 100%;
+    font-size: 13px;
 }
