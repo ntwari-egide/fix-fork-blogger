@@ -20,6 +20,7 @@ export class BlogDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.blogDetails=history.state;
+    window.scrollTo(0,0)
   }
 
 }
