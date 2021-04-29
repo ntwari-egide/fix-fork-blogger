@@ -4,7 +4,6 @@
     height: 190px !important;
     border-radius: 4px;
 }
-
 .blog-content h1{
     font-family: 'Manrope';
     color: #003D79;
@@ -12,6 +11,7 @@
     text-align: center;
     font-size: 16px;
     margin-top: 16px;
+    height: 59px;
 }
 
 .blog-content p{
@@ -21,6 +21,7 @@
     font-size: 13px;
     text-align: justify;
     color: #25282b;
+    height: 100px;
 }
 
 .blog-content span, .blog-content .time-occurance{
