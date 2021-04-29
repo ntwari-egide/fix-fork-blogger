@@ -28,3 +28,22 @@
     font-weight: 700;
     color: #042959;
 }
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+    .welcome-desc-header{
+        font-size: 22px;
+        margin-top: 24px;
+        margin-left: 24px;
+    }
+    .welcome-main-header{
+        font-size: 22px;
+        padding-left: 23px;
+        margin-top: 40px;
+    }
+
+    .welcome-read-button{
+        margin-left: 27px;
+        font-size: 13px;
+        margin-top: 32px;
+    }
+}
