@@ -17,6 +17,12 @@
     }
 }
 
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+    .blog-details-container-left {
+        display: none;
+    }
+}
+
 .left-actions img{
     border: 1px solid #3a3e3e3b;
     padding: 13px;
