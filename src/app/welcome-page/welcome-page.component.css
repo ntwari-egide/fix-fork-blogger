@@ -46,4 +46,10 @@
         font-size: 13px;
         margin-top: 32px;
     }
+    .welcome-image img{
+        margin-left: 17px;
+        width: 336px;
+        display: none;
+    }
+    
 }
