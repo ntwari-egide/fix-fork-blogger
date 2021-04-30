@@ -1,4 +1,4 @@
-<div class="md:m-4">
+<!-- <div class="md:m-4">
     <swiper
       [slidesPerView]="3"
       navigation = true
@@ -14,7 +14,6 @@
                 <div class="ml-4 grid grid-cols-2">
                     <span style="">{{blog.likes}}</span>
                     <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0H24V24H0z"/><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228z"/></svg>
-                    <!-- <img class="" src="../../assets/like-icon.svg"/> -->
                 </div>
                 <div class="ml-4 grid grid-cols-2">
                     <span style="">{{blog.forks}}k</span>
@@ -23,12 +22,12 @@
                 <div class="ml-4 grid grid-cols-2">
                     <span style="">{{blog.comments}}</span>
                     <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="none" d="M0 0h24v24H0z"/><path d="M7.291 20.824L2 22l1.176-5.291A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.956 9.956 0 0 1-4.709-1.176zm.29-2.113l.653.35A7.955 7.955 0 0 0 12 20a8 8 0 1 0-8-8c0 1.334.325 2.618.94 3.766l.349.653-.655 2.947 2.947-.655z" fill="rgba(0,0,0,0.7)"/></svg>
-                    <!-- <img class="" src="../../assets/comment-icon.svg"/> -->
+                    
                 </div>
                 <div class="ml-4 grid grid-cols-2">
                     <span>11</span>
                     <svg class="ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 3c5.392 0 9.878 3.88 10.819 9-.94 5.12-5.427 9-10.819 9-5.392 0-9.878-3.88-10.819-9C2.121 6.88 6.608 3 12 3zm0 16a9.005 9.005 0 0 0 8.777-7 9.005 9.005 0 0 0-17.554 0A9.005 9.005 0 0 0 12 19zm0-2.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9zm0-2a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" fill="rgba(0,0,0,0.82)"/></svg>
-                    <!-- <img  class="" src="../../assets/views-icon.svg"/> -->
+                    
                 </div>
                 <div class="ml-4 flex">
                     <span>updated: </span>
@@ -42,4 +41,31 @@
       <ng-template swiperButtonPrev></ng-template>
       
     </swiper>
+</div> -->
+<div>
+    <ngu-carousel #myCarousel [inputs]="carouselTile" [dataSource]="carouselTileItems">
+        <ngu-tile *nguCarouselDef="let item; let i = index">
+      
+          <ngu-carousel #myCarousel [inputs]="carouselTile" (carouselLoad)="carouselTileLoad(i)" [dataSource]="carouselTiles[i]">
+            <ngu-tile *nguCarouselDef="let item; let j = index">
+              <div class="tile" [style.background]="'url(' + item + ')'" style="min-height: 200px">
+                <h1>{{j}}</h1>
+              </div>
+            </ngu-tile>
+            <button NguCarouselPrev class="leftRs" [style.opacity]="myCarousel.isFirst ? 0.5:1">&lt;</button>
+            <button NguCarouselNext class="rightRs" [style.opacity]="myCarousel.isLast ? 0.5:1">&gt;</button>
+            <ul class="myPoint" NguCarouselPoint>
+              <li *ngFor="let j of myCarousel.pointNumbers; let j = index" [class.active]="j==myCarousel.activePoint" (click)="myCarousel.moveTo(j)"
+                [style.background]="'url(' + carouselTileItems[j] + ')'"></li>
+            </ul>
+          </ngu-carousel>
+      
+        </ngu-tile>
+        <button NguCarouselPrev class="leftRs" [style.opacity]="myCarousel.isFirst ? 0.5:1">&lt;</button>
+        <button NguCarouselNext class="rightRs" [style.opacity]="myCarousel.isLast ? 0.5:1">&gt;</button>
+        <ul class="myPoint" NguCarouselPoint>
+          <li *ngFor="let i of myCarousel.pointNumbers; let i = index" [class.active]="i==myCarousel.activePoint" (click)="myCarousel.moveTo(i)"
+            [style.background]="'url(' + carouselTileItems[i] + ')'"></li>
+        </ul>
+      </ngu-carousel>
 </div>
