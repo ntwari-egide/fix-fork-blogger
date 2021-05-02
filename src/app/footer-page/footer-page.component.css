@@ -18,3 +18,11 @@
     height: 54%;
     cursor: pointer;
 }
+.github-icon:hover{
+    fill: #000;
+
+}
+
+.twitter-icon:hover{
+    fill: #1DA1F2;
+}
