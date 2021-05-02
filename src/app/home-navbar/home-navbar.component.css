@@ -33,14 +33,14 @@
 }
 
 .subscribe-button{
-    background-color: #08428C;
+    background-color: #1a4d8f;
     margin-left: 39px;
-    border-radius: 6px;
-    padding: 14px 38px;
+    border-radius: 2px;
+    padding: 10px 20px;
 }
 
 .subscribe-button:hover{
-    background-color: #1170ec;
+    background-color: rgb(204, 10, 10);
     transform: scale(1.01);
     transition: ease-in-out 0.3s;
 }
