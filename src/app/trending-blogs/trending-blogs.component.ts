@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { NguCarouselConfig } from '@ngu/carousel';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
+import SwiperCore, { Keyboard, Pagination, Navigation } from "swiper/core";
+SwiperCore.use([Keyboard, Pagination, Navigation]);
+
 
 @Component({
   selector: 'trending-blogs',
@@ -22,7 +25,7 @@ export class TrendingBlogsComponent implements OnInit {
     content: '',
     likes: 230,
     forks: 1,
-    comments: 13  
+    comments: 13
   },
   {
     coverPic : 'https://cdn.pixabay.com/photo/2020/07/08/04/12/work-5382501__340.jpg',
@@ -31,7 +34,7 @@ export class TrendingBlogsComponent implements OnInit {
     content: '',
     likes: 211,
     forks: 1,
-    comments: 12 
+    comments: 12
   },
   {
     coverPic : 'https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
@@ -42,10 +45,23 @@ export class TrendingBlogsComponent implements OnInit {
     forks: 0,
     comments: 13
   }]
-  
-  constructor() { }
 
-  ngOnInit(): void {
+  @ViewChild('customSwiper') customSwiper: any;
+
+  swiperConfig: any = {
+      slidesPerView: '3',
+      navigation:true,
+      spaceBetween: 20,
+      // breakpoints: {
+      //     992: {
+      //         spaceBetween: 20
+      //     }
+      // }
   }
 
+
+  constructor() { }
+
+
+  ngOnInit(): void {}
 }
