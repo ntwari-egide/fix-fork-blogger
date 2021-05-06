@@ -42,10 +42,11 @@
     font-size: 14px;
     background: #0A81FF;
     color: white;
-    padding: 12px 128px;
+    padding: 12px 60px;
     text-align: center;
     font-family: 'Manrope';
     border-radius: 5px;
+    margin-left: 22%;
 }
 .read-article-button:hover{
     transform: scale(1.02);
