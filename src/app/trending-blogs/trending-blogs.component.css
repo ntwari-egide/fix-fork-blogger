@@ -61,6 +61,8 @@
     -webkit-transition: opacity 0.6s ease-out;
     transition: opacity 0.6s ease-out;
 }
+
+
 #carousel-1:checked ~ .control-1,
 #carousel-2:checked ~ .control-2,
 #carousel-3:checked ~ .control-3 {
@@ -81,4 +83,13 @@
 #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
 #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
     color: #2b6cb0;  /*Set to match the Tailwind colour you want the active one to be */
+}
+
+.prev-slider{
+    margin-left: 6px;
+    box-shadow: 0 2px 4px #00000059;
+}
+
+.next-slider{
+    box-shadow: 0 2px 4px #00000059;
 }
