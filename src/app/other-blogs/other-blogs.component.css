@@ -1,4 +1,9 @@
 
+.blog-content{
+    box-shadow: 0 2px 4px #00000015;
+    padding: 51px 18px;
+    border-radius: 5px;
+}
 .blog-content .blog-display{
     width: 489px !important;
     height: 190px !important;
@@ -46,7 +51,7 @@
     text-align: center;
     font-family: 'Manrope';
     border-radius: 5px;
-    margin-left: 22%;
+    margin-left: 18%;
 }
 .read-article-button:hover{
     transform: scale(1.02);

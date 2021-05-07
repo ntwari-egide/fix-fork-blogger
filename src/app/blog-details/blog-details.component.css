@@ -31,6 +31,11 @@
     }
 }
 
+.blog-actions-right{
+    position: sticky !important;
+    top: 0 !important;
+}
+
 .left-actions img{
     border: 1px solid #3a3e3e3b;
     padding: 13px;
