@@ -1,7 +1,7 @@
-<div class="md:m-4">
+<div class="">
     <swiper [config]="swiperConfig" #customSwiper>
       <ng-template swiperSlide *ngFor="let blog of listOfTrendingBlogs">
-          <div class="w-5/6 blog-content mt-8 mb-8">
+          <div class="md:m-4 w-5/6 blog-content mt-8 mb-8">
             <img class="blog-display" src={{blog.coverPic}}/>
             <h1>{{blog.title}}</h1>
             <p>{{blog.description}}</p>
@@ -25,12 +25,13 @@
                     <span>updated: </span>
                     <span class="ml-2 time-occurance"><strong>Now</strong></span>
                 </div>
+                
             </div><br /><br />
             <a class="mt-4 read-article-button"  routerLinkActive="active"  [routerLink]="['/read-blog']" [state]= blog >Read article</a>
           </div>
       </ng-template>
-      <ng-template class="btn-next" swiperButtonNext ></ng-template>
-      <ng-template class="btn-prev" swiperButtonPrev></ng-template>
+      <ng-template class="md:ml-2 btn-next" swiperButtonNext ></ng-template>
+      <ng-template class="md:ml-8 btn-prev" swiperButtonPrev></ng-template>
     </swiper>
 </div>
 <!-- 
