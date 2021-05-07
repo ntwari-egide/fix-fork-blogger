@@ -13,7 +13,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { BlogDetailsComponent } from './blog-details/blog-details.component'; // CLI imports router
 import {AppRoutingModule} from './app-routing.module';
 import { NguCarouselModule } from '@ngu/carousel';
-
 const routes : Routes = [
     {path: 'read-blog',component : BlogDetailsComponent},
     {path: '',component: AppComponent,pathMatch : 'full'}
