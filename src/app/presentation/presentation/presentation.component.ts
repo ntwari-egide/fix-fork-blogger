@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
-import { SlidesService } from '../slides.service';
+import { SlidesService } from 'src/app/slides.service';
 
 enum KEY_CODE {
   RIGHT_ARROW = 39,
