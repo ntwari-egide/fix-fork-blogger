@@ -1,3 +1,4 @@
+import { PrismComponent } from './../prism.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,6 +14,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { BlogDetailsComponent } from './blog-details/blog-details.component'; // CLI imports router
 import {AppRoutingModule} from './app-routing.module';
 import { NguCarouselModule } from '@ngu/carousel';
+import { HighlightJsModule } from 'ngx-highlight-js';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-scss';
+import { PresentationComponent } from './presentation/presentation/presentation.component';
+import { SlideComponent } from './presentation/slide/slide.component';
+import { SourceCodeComponent } from './presentation/source-code/source-code.component';
+import { UsdEurConverterComponent } from './presentation/usd-eur-converter/usd-eur-converter.component';
+import { RandomNumberGeneratorComponent } from './presentation/random-number-generator/random-number-generator.component';
+
+
 const routes : Routes = [
     {path: 'read-blog',component : BlogDetailsComponent},
     {path: '',component: AppComponent,pathMatch : 'full'}
@@ -27,9 +40,16 @@ const routes : Routes = [
     TrendingBlogsComponent,
     OtherBlogsComponent,
     FooterPageComponent,
-    BlogDetailsComponent
+    BlogDetailsComponent,
+    PrismComponent,
+    PresentationComponent,
+    SlideComponent,
+    SourceCodeComponent,
+    UsdEurConverterComponent,
+    RandomNumberGeneratorComponent
   ],
   imports: [
+    HighlightJsModule,
     BrowserModule,
     IvyCarouselModule,
     SwiperModule,

@@ -30,9 +30,106 @@
         <h2 class="blog-title text-center sm:text-2xl md:text-3xl pt-8 capitalize w-4/6">{{blogDetails.title}}</h2>
         <p class="blog-paragraph mt-12">{{blogDetails.description}}</p>
         <p class="blog-paragraph mt-12">{{secondParagraphy}}</p>
-        <img class="codes" src="../../assets/codesnippet.png"/>
-        <p class="codes" class="mt-4 font-bold text-sm">Output</p>
-        <img src="../../assets/codesnippet-answer.png"/>
+        <!-- Working with code snippet -->
+
+        <p class="codes" class="mt-14 font-bold text-sm">Java Spring boot - controller.java</p>
+        <div class="mt-14">
+            <pre prism class="preview dark language-JavaScript"><![CDATA[
+                /**
+                * Testing if my blog is working with Java documentation
+                *
+                * @author  Fix&Fork
+                * @version 1.0
+                * @since   2021-05-08
+                */
+                package com.springreader.excel;
+
+                import org.springframework.boot.SpringApplication;
+                import org.springframework.boot.autoconfigure.SpringBootApplication;
+                
+                @SpringBootApplication
+                public class ExcelReaderApplication {
+                
+                    public static void main(String[] args) {
+                        SpringApplication.run(ExcelReaderApplication.class, args);
+                        System.out.println("Reader is working .....");
+                    }
+                
+                }   
+                ]]></pre>
+        </div>
+
+        <p class="codes" class="mt-14 font-bold text-sm">Typescript - component.ts</p>
+        <div class="mt-14">
+            <pre prism class="preview dark language-JavaScript"><![CDATA[
+                import { Component } from '@angular/core';
+                
+                @Component({
+                  selector: 'my-app',
+                  templateUrl: './app.component.html',
+                  styleUrls: [ './app.component.css' ]
+                })
+                export class AppComponent  {
+                  html = `<pre>
+                    var x = 1;
+                    var y = 2;
+                  </pre>`;
+                }
+                ]]></pre>
+        </div>
+
+
+        <p class="codes" class="mt-14 font-bold text-sm">Node js - controller.js</p>
+        <div class="mt-14">
+            <pre prism class="preview dark language-Java"><![CDATA[
+                const mongoose = require("mongoose")
+                const Attorney = require("../model/attorney.model")
+                const jwt = require("jsonwebtoken")
+                const AppResponse = require('./../controllers/globalResponseController')
+                const AppError = require('./../utils/appError')
+
+                exports.getAllAttorneys = (req,res,next) => {
+                    Attorney.find()
+                    .then(attorneys => {
+                        if(attorneys.length != 0){
+                            next(AppResponse.sendResponseWithData(req,res,201,attorneys))            
+                        }
+                        else{
+                            next(new AppError(`There is no attorney registered`,404))
+                        }
+                    })
+                }
+
+                const assignToken = id => {
+                    // console.log(id)
+                    return jwt.sign({id},
+                        process.env.JWT_SECRET,{
+                        expiresIn : process.env.JWT_EXPIRES_IN})
+
+                }
+
+
+                exports.createAttorney = (req,res,next) => {
+                    const attorney = Attorney.create(req.body)
+                    const token = assignToken(attorney.id)
+
+                    next(AppResponse.sendResponseWithMessage(req,res,201,"Created new attorney"))   
+                }
+
+                exports.login = async(req,res,next)=> {
+                    const {email,password} = req.body
+                        if(!email || !password){            
+                        next(new AppError(`Please email or password should be provided`,404))
+                    }
+                    const attorney = await Attorney.find({email}).select('+password')
+                //     console.log(attorney)
+                //      if(attorney.length == 0 || await !AppResponse.checkCorrectPassword(password,attorney.password)){
+                //         next(new AppError(`Please email or password are not incorrect`,404))
+                //     }
+                    sendToken(attorney,200,res)
+                }
+            ]]></pre>
+        </div>
         <p class="blog-paragraph mt-12">{{firstParagraph}}</p>
         <div class="comment-section mb-12">
             <div class="comment-container flex mt-8">
