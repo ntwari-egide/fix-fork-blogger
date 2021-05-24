@@ -30,7 +30,7 @@ export class TrendingBlogsComponent implements OnInit {
   {
     coverPic : 'https://cdn.pixabay.com/photo/2020/07/08/04/12/work-5382501__340.jpg',
     title: 'IT & Computer Science Courses',
-    description: 'From learning to code and exploring programming to understanding cyber security, take online IT and coding courses to explore tech trends like data science and digital marketing.',
+    description: 'From learning to code and exploring programming to understanding cyber security.',
     content: '',
     likes: 211,
     forks: 1,

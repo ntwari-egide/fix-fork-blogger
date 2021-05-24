@@ -52,3 +52,47 @@
     transition: ease-in-out 0.3s;
     background-color: #1064bd;
 }
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+  .blog-content .blog-display{
+    width: 750px !important;
+    height: 90px !important;
+    border-radius: 4px;
+}
+.blog-content h1{
+  font-family: 'Manrope';
+  color: #003D79;
+  font-weight: 700;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 16px;
+  height: 59px;
+}
+
+.blog-content p{
+  font-weight: 500;
+  font-family: 'Manrope';
+  margin-top: 5em;
+  font-size: 12px;
+  text-align: justify;
+  color: #25282b;
+  height: 80px;
+}
+.read-article-button{
+  margin-top: 30em;
+  width: 2em;
+  padding: 10px;
+  margin-left: 0em;
+  font-size: 10px;
+}
+.re-icons{
+  margin-top: 15em;
+  padding: 10px;
+  display: none;
+
+}
+
+}
+@media only screen and (min-width: 768px){
+
+}

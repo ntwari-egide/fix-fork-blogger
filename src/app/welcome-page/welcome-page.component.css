@@ -51,5 +51,12 @@
         width: 336px;
         display: none;
     }
-    
+    .blogz{
+      margin-left: 1.5em;
+    }
+    .other-blogz{
+      margin-left: 3em;
+    }
+
+
 }

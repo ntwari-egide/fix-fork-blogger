@@ -42,13 +42,27 @@
     font-size: 14px;
     background: #0A81FF;
     color: white;
-    padding: 12px 128px;
+    padding: 12px 120px;
     text-align: center;
     font-family: 'Manrope';
     border-radius: 5px;
+    width: 100px;
 }
 .read-article-button:hover{
     transform: scale(1.02);
     transition: ease-in-out 0.3s;
     background-color: #1064bd;
 }
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+  .blog-content .read-article-button{
+    font-size: 3px;
+    background: #0A81FF;
+    color: white;
+    text-align: center;
+    font-family: 'Manrope';
+    border-radius: 5px;
+    /* padding: 0px; */
+  }
+}
+
