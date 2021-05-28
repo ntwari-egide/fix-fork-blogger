@@ -1,0 +1,142 @@
+[
+    {
+        "id": 1,
+        "coverPic" : "https://cdn.pixabay.com/photo/2018/07/15/10/44/dna-3539309__340.jpg",
+        "title": "Advanced and Applied AI on Microsoft Azure",
+        "description": "Enhance your understanding of machine learning and AI using Microsoft Azure and Python.",
+        "blogContent": [
+            {
+                "id": 1,
+                "type": "paragraph",
+                "content": "In today’s technology-driven world, students and young adults become familiar with computers at an early age. Some schools have stopped teaching typing altogether, assuming students already possess the skills necessary to be successful in the modern workplace, according to an article in MIT’s Technology Review.",
+                "updatedAt": "2021-05-24"
+            },
+            {
+                "id": 2,
+                "type": "image",
+                "content": "https://media.istockphoto.com/photos/family-running-down-rocky-trail-picture-id1254013331?b=1&k=6&m=1254013331&s=170667a&w=0&h=_5eFzOYh0AUhy0_eZVJc5oZdvLTdj-oVDpz0HZhtg4A=",
+                "updatedAt": "2021-05-24"
+            },
+            { 
+                "id": 3,
+                "type": "source-code",
+                "content": "",
+                "updatedAt": "2021-05-24"
+            }
+        ],
+        "likes": 11,
+        "forks": 9,
+        "blogComments": [
+            {
+                "id": 1,
+                "fullName": "Anonymous Contributor",
+                "commentedAt": "2021-05-24 11:00:00",
+                "commentContent": "This blog fixed my bug. Thank you for this gread blog. Keep it up bro !",
+                "upvotes": 3
+            }
+        ],
+        "views": 12,
+        "updatedAt": "2021-05-24"
+    },
+    {
+        "id": 2,
+        "coverPic" : "https://cdn.pixabay.com/photo/2016/02/19/11/23/women-1209678__340.jpg",
+        "title": "Get practical, hands on experience in cybersecurity",
+        "description": "Build essential cyber security skills and learn about security threats and how to manage them.",
+        "blogContent": [
+            {
+                "id": 1,
+                "type": "paragraph",
+                "content": "Corporations regularly handle all sorts of sensitive data, such as personally identifiable information (PII), financial data, and trade secrets. Cybersecurity professionals are essential for protecting this data from increasingly sophisticated cyber threats",
+                "updatedAt": "2021-05-24"
+            },
+            {
+                "id": 2,
+                "type": "image",
+                "content": "https://cdn.goskills.com/blobs/blogs/378/c0d1446a-32be-49a3-9a29-5e719698d0c7.jpg",
+                "updatedAt": "2021-05-24"
+            },
+            { 
+                "id": 3,
+                "type": "source-code",
+                "content": "",
+                "updatedAt": "2021-05-24"
+            },
+            {
+                "id": 4,
+                "type": "paragraph",
+                "content": "Every company interacts with some form of sensitive data in their day-to-day operations. Even non-tech companies need to collect basic human resources information on their employees. This personally identifiable information (PII) carries significant monetary value for identity theft and other harmful acts, making it a hot commodity in the \"dark web\" of the internet.",
+                "updatedAt": "2021-05-24"
+            }
+        ],
+        "likes": 8,
+        "forks": 3,
+        "blogComments": [
+            {
+                "id": 1,
+                "fullName": "Anonymous Contributor",
+                "commentedAt": "2021-05-24 11:00:00",
+                "commentContent": "Great share. Keep it up bro !",
+                "upvotes": 2
+            },
+            {
+                "id": 2,
+                "fullName": "Anonymous Contributor",
+                "commentedAt": "2021-05-24 10:00:00",
+                "commentContent": "Amazing write-up!",
+                "upvotes": 4
+            }
+        ],
+        "views": 12,
+        "updatedAt": "2021-05-24"
+    },
+    {
+        "id": 3,
+        "coverPic" : "https://cdn.pixabay.com/photo/2020/07/08/04/12/work-5382501__340.jpg",
+        "title": "IT & Computer Science Courses",
+        "description": "From learning to code and exploring programming to understanding cyber security, take online IT and coding courses to explore tech trends like data science and digital marketing.",
+        "blogContent": [
+            {
+                "id": 1,
+                "type": "paragraph",
+                "content": "Computer Science is a rapidly growing field that develops essential knowledge and skills for today’s world. Computer Science also cultivates computational thinking, problem-solving skills and creative thinking; foundational learning for all occupations."
+            },
+            {
+                "id": 2,
+                "type": "paragraph",
+                "content": "All scientists and engineers need a firm foundation in basic science and math. They also need to be able to work in teams and to communicate their ideas both verbally and in writing."
+            },
+            {
+                "id": 3,
+                "type": "image",
+                "content": "https://cdn.pixabay.com/photo/2014/05/02/21/49/laptop-336373__480.jpg",
+                "updatedAt": "2021-05-24"
+            },
+            {
+                "id": 4,
+                "type": "source-code",
+                "content": ""
+            }
+        ],
+        "likes": 14,
+        "forks": 0,
+        "blogComments": [
+            {
+                "id": 1,
+                "fullName": "Anonymous Contributor",
+                "commentedAt": "2021-05-24 09:00:00",
+                "commentContent": "Great share. Keep it up bro !",
+                "upvotes": 2
+            },
+            {
+                "id": 2,
+                "fullName": "Anonymous Contributor",
+                "commentedAt": "2021-05-24 09:10:00",
+                "commentContent": "Amazing write-up!, Great share",
+                "upvotes": 4
+            }
+        ],
+        "views": 56,
+        "updatedAt": "2021-05-24"
+    }
+]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, NavigationStart } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import BlogDetailService from './blog-details.service';
 
 @Component({
   selector: 'blog-details',
@@ -10,17 +11,126 @@ export class BlogDetailsComponent implements OnInit {
 
   blogDetails;
 
-  constructor(private router:Router, private activatedRoute:ActivatedRoute) { 
-    this.router.getCurrentNavigation().extras.state
+  constructor(private router:Router, private _Activatedroute:ActivatedRoute, private _router:Router,private blogDetailService:BlogDetailService) { 
+    // this.router.getCurrentNavigation().extras.state
   }
 
-  firstParagraph = "Most, if not all, careers involve some computer-based work and require strong typing skills. Information technology professionals, for example, must be efficient typists in order to write code for computer and software programs. Accuracy is equally as important as speed, as a simple typo could result in a system-wide error"
+ currentBlogId;
 
- secondParagraphy = "In today’s technology-driven world, students and young adults become familiar with computers at an early age. Some schools have stopped teaching typing altogether, assuming students already possess the skills necessary to be successful in the modern workplace, according to an article in MIT’s Technology Review."
+ comment = ''
+
+ commentEmpty = false
+
+ commentAdded = false
 
   ngOnInit(): void {
-    this.blogDetails=history.state;
+
+    this._Activatedroute.paramMap.subscribe(params => { 
+
+       this.currentBlogId = params.get('id')
+
+       if(this.currentBlogId == null){
+          alert('There is no id passed related to the blog')
+          this.onBack()
+       }
+
+   });
+  //  console.log("Data in id : "+this.currentBlogId);
+
+   this.blogDetails = this.blogDetailService.getBlogDetails(this.currentBlogId)   
+   this.blogDetailService.addViewOnBlogPost(this.currentBlogId);
+
     window.scrollTo(0,0)
+
+  }
+
+  openToComment = false;
+
+  onBack(): void {
+    this._router.navigate(['/']);
+ }
+
+  numberOfComments (blogComments) {
+
+    return Object.keys(blogComments).length;
+
+  }
+
+  likeBlogAction(){
+
+    return this.blogDetailService.addLikeOnBlogPost(this.currentBlogId)
+
+  }
+
+  forkBlogAction(){
+
+    return this.blogDetailService.addForkOnBlogPost(this.currentBlogId);
+
+  }
+
+  upvoteBlogAction(commentId: Number){
+
+    return this.blogDetailService.upvoteComment(this.currentBlogId,commentId);
+
+  }
+
+
+  startedCommenting(){
+
+    this.openToComment = true
+    
+  }
+
+  notCommenting(){
+
+    this.openToComment = false
+
+  }
+
+
+  updateCommentBox(value){
+
+    this.comment = value
+    
+  }
+
+  
+  checkIfStillShowingCommentMessage (){
+
+    if(this.commentAdded){
+
+      setTimeout(() => this.commentAdded = false , 6000)
+
+    }
+
+  }
+
+  saveComment(){
+
+    console.log("reached here");
+    
+    if(this.comment != ""){
+
+        this.commentEmpty = false
+
+        this.blogDetailService.addComment(this.comment,this.currentBlogId)
+
+        this.comment = ""
+
+        this.commentAdded = true
+
+        this.checkIfStillShowingCommentMessage()
+
+    }
+
+    else{
+
+      this.commentEmpty= true
+
+      return
+
+    }
+
   }
 
 }

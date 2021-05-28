@@ -49,13 +49,13 @@ export class PresentationComponent implements OnInit {
   applyTheme() {
     switch(this.theme) {
       case 'light':
-        require("style-loader!./../themes/light.scss");
+        // require("style-loader!./../themes/light.scss");
         break;
       case 'dark':
-        require("style-loader!./../themes/dark.scss");
+        // require("style-loader!./../themes/dark.scss");
         break;
       default:
-        require("style-loader!./../themes/light.scss");
+        // require("style-loader!./../themes/light.scss");
     }
   }
 }

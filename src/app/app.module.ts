@@ -24,6 +24,8 @@ import { SlideComponent } from './presentation/slide/slide.component';
 import { SourceCodeComponent } from './presentation/source-code/source-code.component';
 import { UsdEurConverterComponent } from './presentation/usd-eur-converter/usd-eur-converter.component';
 import { RandomNumberGeneratorComponent } from './presentation/random-number-generator/random-number-generator.component';
+import { FormsModule } from '@angular/forms';
+import { BlogPresentationComponent } from './blog-presentation/blog-presentation.component';
 
 
 const routes : Routes = [
@@ -46,9 +48,11 @@ const routes : Routes = [
     SlideComponent,
     SourceCodeComponent,
     UsdEurConverterComponent,
-    RandomNumberGeneratorComponent
+    RandomNumberGeneratorComponent,
+    BlogPresentationComponent
   ],
   imports: [
+    FormsModule,
     HighlightJsModule,
     BrowserModule,
     IvyCarouselModule,

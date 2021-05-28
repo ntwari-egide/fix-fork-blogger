@@ -1,4 +1,7 @@
 <div class="">
+    <!-- {{
+        listOfTrendingBlogs | json
+    }} -->
     <swiper [config]="swiperConfig" #customSwiper>
       <ng-template swiperSlide *ngFor="let blog of listOfTrendingBlogs">
           <div class="md:m-4 w-5/6 blog-content mt-8 mb-8">
@@ -12,16 +15,16 @@
                     <!-- <img class="" src="../../assets/like-icon.svg"/> -->
                 </div>
                 <div class="ml-4 grid grid-cols-2">
-                    <span style="">{{blog.forks}}k</span>
+                    <span class="ml-1" style="">{{blog.forks}} </span>
                     <img class="ml-1" style="height: 100%;" src="../../assets/fork-icon.svg"/>
                 </div>
                 <div class="ml-4 grid grid-cols-2">
-                    <span style="">{{blog.comments}}</span>
+                    <span style="">{{getNumberOfComments(blog.blogComments)}}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="none" d="M0 0h24v24H0z"/><path d="M7.291 20.824L2 22l1.176-5.291A9.956 9.956 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.956 9.956 0 0 1-4.709-1.176zm.29-2.113l.653.35A7.955 7.955 0 0 0 12 20a8 8 0 1 0-8-8c0 1.334.325 2.618.94 3.766l.349.653-.655 2.947 2.947-.655z" fill="rgba(0,0,0,0.7)"/></svg>
                     <!-- <img class="" src="../../assets/comment-icon.svg"/> -->
                 </div>
                 <div class="ml-4 grid grid-cols-2">
-                    <span>11</span>
+                    <span>{{blog.views}}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 3c5.392 0 9.878 3.88 10.819 9-.94 5.12-5.427 9-10.819 9-5.392 0-9.878-3.88-10.819-9C2.121 6.88 6.608 3 12 3zm0 16a9.005 9.005 0 0 0 8.777-7 9.005 9.005 0 0 0-17.554 0A9.005 9.005 0 0 0 12 19zm0-2.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9zm0-2a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" fill="rgba(0,0,0,0.82)"/></svg>
                     <!-- <img  class="" src="../../assets/views-icon.svg"/> -->
                 </div>
@@ -30,7 +33,7 @@
                     <span class="ml-2 time-occurance"><strong>Now</strong></span>
                 </div>
             </div><br /><br />
-            <a class="mt-4 read-article-button"  routerLinkActive="active"  [routerLink]="['/read-blog']" [state]= blog >Read article</a>
+            <a class="mt-4 read-article-button"  routerLinkActive="active"  [routerLink]="['/read-blog',blog.id]">Read article</a>
           </div>
       </ng-template>
       <ng-template class="md:ml-2 btn-next" swiperButtonNext ></ng-template>

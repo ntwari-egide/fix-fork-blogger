@@ -1,24 +1,24 @@
 <home-navbar></home-navbar>
 <div class="grid md:grid-cols-3 sm:grid-cols-1">
     <div class="blog-actions-right w-2/6">
-        <div class="md:ml-8 md:mt-4 left-actions flex">
+        <div class="md:ml-8 md:mt-4 left-actions flex" (click)="forkBlogAction()">
             <img src="../../assets/fork-icon-2.svg"/>
-            <p>{{blogDetails.forks}}k</p>
+            <p>{{blogDetails[0].forks}}</p>
         </div>
 
         <div class="md:ml-8 md:mt-14 left-actions flex">
             <img src="../../assets/views-icon-2.svg"/>
-            <p>{{11}}</p>
+            <p>{{blogDetails[0].views}}</p>
         </div>
 
-        <div class="md:ml-8 md:mt-14 left-actions flex">
+        <div class="md:ml-8 md:mt-14 left-actions flex" (click)="likeBlogAction()">
             <img src="../../assets/like-icon-2.svg"/>
-            <p>{{blogDetails.likes}}</p>
+            <p>{{blogDetails[0].likes}}</p>
         </div>
 
         <div class="md:ml-8 md:mt-14 left-actions flex">
             <img src="../../assets/comment-icon-2.svg"/>
-            <p>{{blogDetails.comments}}</p>
+            <p>{{numberOfComments(blogDetails[0].blogComments)}}</p>
         </div>
 
         <div class="md:ml-8 md:mt-14 left-actions flex">
@@ -26,136 +26,94 @@
         </div>
     </div>
     <div class="blog-details-container md:mt-8 md:mb-12">
-        <img src={{blogDetails.coverPic}}/>
-        <h2 class="blog-title text-center sm:text-2xl md:text-3xl pt-8 capitalize w-4/6">{{blogDetails.title}}</h2>
-        <p class="blog-paragraph mt-12">{{blogDetails.description}}</p>
-        <p class="blog-paragraph mt-12">{{secondParagraphy}}</p>
-        <!-- Working with code snippet -->
+        <img src={{blogDetails[0].coverPic}}/>
+        <h2 class="blog-title text-center sm:text-2xl md:text-3xl pt-8 capitalize w-4/6">{{blogDetails[0].title}}</h2>
+        <p class="blog-paragraph mt-12">{{blogDetails[0].description}}</p>
+        <div *ngFor="let content of blogDetails[0].blogContent">
+            <div *ngIf="content.type == 'paragraph'">
+                <p class="blog-paragraph mt-12">{{content.content}}</p>
+            </div>
+            <div *ngIf="content.type == 'image'">
+                <img class="my-8" src={{content.content}} />
+            </div>
+            <div *ngIf="content.type == 'source-code'">
+                <p class="codes" class="mt-14 font-bold text-sm">Node js - controller.js</p>
+                <div class="mt-14">
+                    <pre prism class="preview dark language-Java"><![CDATA[
+                        const mongoose = require("mongoose")
+                        const Attorney = require("../model/attorney.model")
+                        const jwt = require("jsonwebtoken")
+                        const AppResponse = require('./../controllers/globalResponseController')
+                        const AppError = require('./../utils/appError')
 
-        <p class="codes" class="mt-14 font-bold text-sm">Java Spring boot - controller.java</p>
-        <div class="mt-14">
-            <pre prism class="preview dark language-JavaScript"><![CDATA[
-                /**
-                * Testing if my blog is working with Java documentation
-                *
-                * @author  Fix&Fork
-                * @version 1.0
-                * @since   2021-05-08
-                */
-                package com.springreader.excel;
-
-                import org.springframework.boot.SpringApplication;
-                import org.springframework.boot.autoconfigure.SpringBootApplication;
-                
-                @SpringBootApplication
-                public class ExcelReaderApplication {
-                
-                    public static void main(String[] args) {
-                        SpringApplication.run(ExcelReaderApplication.class, args);
-                        System.out.println("Reader is working .....");
-                    }
-                
-                }   
-                ]]></pre>
-        </div>
-
-        <p class="codes" class="mt-14 font-bold text-sm">Typescript - component.ts</p>
-        <div class="mt-14">
-            <pre prism class="preview dark language-JavaScript"><![CDATA[
-                import { Component } from '@angular/core';
-                
-                @Component({
-                  selector: 'my-app',
-                  templateUrl: './app.component.html',
-                  styleUrls: [ './app.component.css' ]
-                })
-                export class AppComponent  {
-                  html = `<pre>
-                    var x = 1;
-                    var y = 2;
-                  </pre>`;
-                }
-                ]]></pre>
-        </div>
-
-
-        <p class="codes" class="mt-14 font-bold text-sm">Node js - controller.js</p>
-        <div class="mt-14">
-            <pre prism class="preview dark language-Java"><![CDATA[
-                const mongoose = require("mongoose")
-                const Attorney = require("../model/attorney.model")
-                const jwt = require("jsonwebtoken")
-                const AppResponse = require('./../controllers/globalResponseController')
-                const AppError = require('./../utils/appError')
-
-                exports.getAllAttorneys = (req,res,next) => {
-                    Attorney.find()
-                    .then(attorneys => {
-                        if(attorneys.length != 0){
-                            next(AppResponse.sendResponseWithData(req,res,201,attorneys))            
+                        exports.getAllAttorneys = (req,res,next) => {
+                            Attorney.find()
+                            .then(attorneys => {
+                                if(attorneys.length != 0){
+                                    next(AppResponse.sendResponseWithData(req,res,201,attorneys))            
+                                }
+                                else{
+                                    next(new AppError(`There is no attorney registered`,404))
+                                }
+                            })
                         }
-                        else{
-                            next(new AppError(`There is no attorney registered`,404))
+
+                        const assignToken = id => {
+                            // console.log(id)
+                            return jwt.sign({id},
+                                process.env.JWT_SECRET,{
+                                expiresIn : process.env.JWT_EXPIRES_IN})
+
                         }
-                    })
-                }
-
-                const assignToken = id => {
-                    // console.log(id)
-                    return jwt.sign({id},
-                        process.env.JWT_SECRET,{
-                        expiresIn : process.env.JWT_EXPIRES_IN})
-
-                }
 
 
-                exports.createAttorney = (req,res,next) => {
-                    const attorney = Attorney.create(req.body)
-                    const token = assignToken(attorney.id)
+                        exports.createAttorney = (req,res,next) => {
+                            const attorney = Attorney.create(req.body)
+                            const token = assignToken(attorney.id)
 
-                    next(AppResponse.sendResponseWithMessage(req,res,201,"Created new attorney"))   
-                }
+                            next(AppResponse.sendResponseWithMessage(req,res,201,"Created new attorney"))   
+                        }
 
-                exports.login = async(req,res,next)=> {
-                    const {email,password} = req.body
-                        if(!email || !password){            
-                        next(new AppError(`Please email or password should be provided`,404))
-                    }
-                    const attorney = await Attorney.find({email}).select('+password')
-                //     console.log(attorney)
-                //      if(attorney.length == 0 || await !AppResponse.checkCorrectPassword(password,attorney.password)){
-                //         next(new AppError(`Please email or password are not incorrect`,404))
-                //     }
-                    sendToken(attorney,200,res)
-                }
-            ]]></pre>
-        </div>
-        <p class="blog-paragraph mt-12">{{firstParagraph}}</p>
-        <div class="comment-section mb-12">
-            <div class="comment-container flex mt-8">
-                <p class="profile-pic">AC</p>
-                <div class="ml-4">
-                    <p class="font-bold" style="color: #041121e5;font-size: 16px;">Anonymous Contributor</p>
-                    <p class="text-xs" style="color: #73A7CC;">3 hours ago</p>
-                    <p class="w-full mt-2 pb-6" style="font-size: 14px;color: #041121b0;font-weight: 700;border-bottom: 1px solid #7070706c;">Thank you so much for this great blog !</p>
-                    <div class="flex mt-4 comment-actions">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0H24V24H0z"/><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228z" fill="rgba(237,86,34,1)"/></svg>
-                        <p class="ml-2">23 likes</p>
-                        <svg class="ml-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10 3h4a8 8 0 1 1 0 16v3.5c-5-2-12-5-12-11.5a8 8 0 0 1 8-8zm2 14h2a6 6 0 1 0 0-12h-4a6 6 0 0 0-6 6c0 3.61 2.462 5.966 8 8.48V17z" fill="rgba(58,62,62,1)"/></svg>
-                        <p class="ml-2">0 replies</p>
-                    </div>
+                        exports.login = async(req,res,next)=> {
+                            const {email,password} = req.body
+                                if(!email || !password){            
+                                next(new AppError(`Please email or password should be provided`,404))
+                            }
+                            const attorney = await Attorney.find({email}).select('+password')
+                        //     console.log(attorney)
+                        //      if(attorney.length == 0 || await !AppResponse.checkCorrectPassword(password,attorney.password)){
+                        //         next(new AppError(`Please email or password are not incorrect`,404))
+                        //     }
+                            sendToken(attorney,200,res)
+                        }
+                    ]]></pre>
                 </div>
             </div>
+        </div>
+        <!-- Working with code snippet -->
+        
+        <div class="comment-section mb-12">
+            <div class="my-8">
+                <textarea ngModel name="comment" #comment="ngModel" placeholder="enter your reactions" (mouseup)="startedCommenting()" (change)="updateCommentBox(comment.value)"></textarea>
+                <p *ngIf="commentEmpty" class="text-red-500">comment is empty, try to fill the box</p>
 
-            <div class="comment-container flex mt-12">
-                <p style="background: #003D79 !important;" class="profile-pic">AC</p>
+                <p *ngIf="commentAdded" class="text-green-700">your comment is added !</p>
+
+                <button (click)="saveComment()" *ngIf="openToComment" class="my-4 comment-action-btn">comment</button>
+            </div>
+
+            <div class="comment-container flex mt-8"  *ngFor="let comment of blogDetails[0].blogComments">
+                <p class="profile-pic">AC</p>
                 <div class="ml-4">
-                    <p class="font-bold" style="color: #041121e5;font-size: 16px;">Anonymous Contributor</p>
-                    <p class="text-xs" style="color: #73A7CC;">37 minutes ago</p>
-                    <p class="w-full mt-2 pb-6" style="font-size: 14px;color: #041121b0;font-weight: 700;border-bottom: 1px solid #7070706c;">This blog fixed my bug. Thank you for this gread blog. Keep it up bro !</p>
+                    <p class="font-bold" style="color: #041121e5;font-size: 16px;">{{comment.fullName}}</p>
+                    <p class="text-xs" style="color: #73A7CC;">{{comment.commentedAt}}</p>
+                    <p class="w-full mt-2 pb-6" style="font-size: 14px;color: #041121b0;font-weight: 700;border-bottom: 1px solid #7070706c;">{{comment.commentContent}}</p>
                     <div class="flex mt-4 comment-actions">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0H24V24H0z"/><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228z" fill="rgba(237,86,34,1)"/></svg>
-                        <p class="ml-2">3 likes</p>
+                        <svg *ngIf="comment.upvotes != 0" class="cursor-pointer" (click)="upvoteBlogAction(comment.id)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0H24V24H0z"/><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228z" fill="rgba(237,86,34,1)"/></svg>
+
+                        <svg *ngIf="comment.upvotes == 0" class="cursor-pointer" (click)="upvoteBlogAction(comment.id)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0H24V24H0z"/><path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228zm6.826 1.641c-1.5-1.502-3.92-1.563-5.49-.153l-1.335 1.198-1.336-1.197c-1.575-1.412-3.99-1.35-5.494.154-1.49 1.49-1.565 3.875-.192 5.451L12 18.654l7.02-7.03c1.374-1.577 1.299-3.959-.193-5.454z" fill="rgba(237,86,34,1)"/></svg>
+
+                        <p class="ml-2">{{comment.upvotes}} likes</p>
                         <svg class="ml-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10 3h4a8 8 0 1 1 0 16v3.5c-5-2-12-5-12-11.5a8 8 0 0 1 8-8zm2 14h2a6 6 0 1 0 0-12h-4a6 6 0 0 0-6 6c0 3.61 2.462 5.966 8 8.48V17z" fill="rgba(58,62,62,1)"/></svg>
                         <p class="ml-2">0 replies</p>
                     </div>
@@ -163,10 +121,14 @@
             </div>
         </div>
     </div>
+
     <div class="blog-details-container-left">
         <div>
             <div class="md:ml-12 md:mt-4 right-actions flex">
-                <img src="../../assets/slideshow-icon.svg"/>
+                <a   routerLinkActive="active"  [routerLink]="['/blog-presentation',currentBlogId]"  target="_blank">
+                    <img src="../../assets/slideshow-icon.svg"/>
+                </a>
+                
             </div>
     
             <div class="md:ml-12 md:mt-14 right-actions flex">
